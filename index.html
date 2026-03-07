@@ -102,125 +102,194 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* ===== SABİT KIRMIZI ÜST MENÜ - ÇERÇEVESİZ VE ORTALANMIŞ ===== */
-        .sticky-red-menu {
+        /* ===== MODERN PREMIUM ÜST MENÜ - YENİ TASARIM ===== */
+        .premium-nav {
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: #dc143c;
-            color: white;
-            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 102, 204, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 8px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border-bottom: 2px solid #b01030;
-            font-family: 'Montserrat', sans-serif;
+            gap: 15px;
         }
 
-        .menu-logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: white;
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            text-transform: uppercase;
+            padding: 6px 0;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #0066cc, #00a651);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 5px 15px;
-            border-radius: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            flex: 1;
-            text-align: center;
+            box-shadow: 0 6px 14px rgba(0, 102, 204, 0.25);
         }
 
-        .menu-logo i {
-            font-size: 1.5rem;
-            color: #ffd700;
-        }
-
-        .menu-logo span {
-            white-space: nowrap;
-        }
-
-        .menu-call {
-            display: flex;
-            align-items: center;
-        }
-
-        .menu-call-number {
-            font-size: 1.5rem;
-            font-weight: 800;
+        .logo-icon i {
+            font-size: 1.8rem;
             color: white;
-            text-decoration: none;
-            letter-spacing: 1px;
-            white-space: nowrap;
-            padding: 6px 0;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text-main {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .logo-text-sub {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #666;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .nav-contact {
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: all 0.3s;
+            gap: 20px;
         }
 
-        .menu-call-number i {
+        .nav-badge {
+            background: rgba(0, 102, 204, 0.08);
+            padding: 8px 16px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-badge i {
+            color: #0066cc;
+            font-size: 1rem;
+        }
+
+        .nav-badge span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2d2d2d;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(0, 102, 204, 0.35);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-phone:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 102, 204, 0.45);
+            background: linear-gradient(135deg, #0052a3, #004080);
+        }
+
+        .nav-phone i {
+            color: white;
             font-size: 1.2rem;
-            color: #ffd700;
         }
 
-        .menu-call-number:hover {
-            opacity: 0.9;
+        .nav-phone-number {
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Mobil menü düzenlemeleri - ORTALANMIŞ */
-        @media (max-width: 700px) {
-            .sticky-red-menu {
-                flex-direction: column;
-                padding: 8px 12px;
-                gap: 5px;
+        .nav-phone-number .number {
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .nav-phone-number .label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Mobil düzenlemeler */
+        @media (max-width: 800px) {
+            .nav-container {
+                padding: 0 16px;
             }
             
-            .menu-logo {
-                font-size: 1.1rem;
-                padding: 4px 10px;
-                width: 100%;
-                margin-bottom: 2px;
-            }
-            
-            .menu-logo i {
-                font-size: 1.2rem;
-            }
-            
-            .menu-call {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .menu-call-number {
-                font-size: 1.3rem;
-                padding: 4px 0;
-                justify-content: center;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .menu-call-number i {
+            .logo-text-main {
                 font-size: 1.1rem;
             }
-        }
-
-        @media (max-width: 400px) {
-            .menu-logo {
+            
+            .logo-text-sub {
+                font-size: 0.6rem;
+            }
+            
+            .nav-badge {
+                display: none;
+            }
+            
+            .nav-phone {
+                padding: 8px 16px;
+            }
+            
+            .nav-phone-number .number {
                 font-size: 1rem;
             }
+        }
+
+        @media (max-width: 500px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 10px 16px;
+            }
             
-            .menu-call-number {
-                font-size: 1.1rem;
+            .nav-logo {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-contact {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-phone {
+                width: 100%;
+                justify-content: center;
             }
         }
         /* ===== MENÜ BİTİŞ ===== */
@@ -1062,17 +1131,35 @@
     </style>
 </head>
 <body>
-    <!-- KIRMIZI SABİT ÜST MENÜ - ÇERÇEVESİZ VE ORTALANMIŞ -->
-    <div class="sticky-red-menu">
-        <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="menu-logo">
-            <span>GİZLİ SOHBET HATTI</span>
-        </a>
-        <div class="menu-call">
-            <a href="tel:003225889070" class="menu-call-number">
-                <i class="fas fa-phone-alt"></i> 00322 588 90 70
+    <!-- MODERN PREMIUM ÜST MENÜ - YENİ TASARIM -->
+    <nav class="premium-nav">
+        <div class="nav-container">
+            <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-comment-dots"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-text-main">ANA SAYFA - Sesli Sohbet Hattı</span>
+                    <span class="logo-text-sub">7/24 ÖZEL HAT</span>
+                </div>
             </a>
+            
+            <div class="nav-contact">
+                <div class="nav-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>%100 Anonim</span>
+                </div>
+                
+                <a href="tel:003225889070" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="nav-phone-number">
+                        <span class="number">00322 588 90 70</span>
+                        <span class="label">Hemen Ara</span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Floating Call Button -->
     <a href="tel:003225889070" class="floating-call" id="floatingCall">
