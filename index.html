@@ -102,7 +102,7 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* ===== SABİT KIRMIZI ÜST MENÜ - SADELEŞTİRİLMİŞ ===== */
+        /* ===== SABİT KIRMIZI ÜST MENÜ - ÇERÇEVESİZ VE ORTALANMIŞ ===== */
         .sticky-red-menu {
             position: sticky;
             top: 0;
@@ -161,14 +161,11 @@
             text-decoration: none;
             letter-spacing: 1px;
             white-space: nowrap;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 6px 15px;
-            border-radius: 40px;
-            border: 1px solid #ffd700;
-            transition: all 0.3s;
+            padding: 6px 0;
             display: flex;
             align-items: center;
             gap: 5px;
+            transition: all 0.3s;
         }
 
         .menu-call-number i {
@@ -177,42 +174,53 @@
         }
 
         .menu-call-number:hover {
-            background: rgba(255, 215, 0, 0.2);
-            transform: scale(1.02);
+            opacity: 0.9;
         }
 
-        /* Mobil menü düzenlemeleri */
+        /* Mobil menü düzenlemeleri - ORTALANMIŞ */
         @media (max-width: 700px) {
             .sticky-red-menu {
+                flex-direction: column;
                 padding: 8px 12px;
-                gap: 8px;
+                gap: 5px;
             }
+            
             .menu-logo {
-                font-size: 1rem;
-                padding: 4px 8px;
-            }
-            .menu-logo i {
-                font-size: 1.1rem;
-            }
-            .menu-call-number {
                 font-size: 1.1rem;
                 padding: 4px 10px;
+                width: 100%;
+                margin-bottom: 2px;
             }
+            
+            .menu-logo i {
+                font-size: 1.2rem;
+            }
+            
+            .menu-call {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .menu-call-number {
+                font-size: 1.3rem;
+                padding: 4px 0;
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+            
             .menu-call-number i {
-                font-size: 0.9rem;
+                font-size: 1.1rem;
             }
         }
 
         @media (max-width: 400px) {
-            .sticky-red-menu {
-                flex-direction: column;
-                align-items: stretch;
-            }
             .menu-logo {
-                width: 100%;
+                font-size: 1rem;
             }
-            .menu-call {
-                justify-content: center;
+            
+            .menu-call-number {
+                font-size: 1.1rem;
             }
         }
         /* ===== MENÜ BİTİŞ ===== */
@@ -1054,10 +1062,9 @@
     </style>
 </head>
 <body>
-    <!-- KIRMIZI SABİT ÜST MENÜ - SADELEŞTİRİLMİŞ VE ORTALANMIŞ -->
+    <!-- KIRMIZI SABİT ÜST MENÜ - ÇERÇEVESİZ VE ORTALANMIŞ -->
     <div class="sticky-red-menu">
         <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="menu-logo">
-            <i class="fas fa-phone-alt"></i>
             <span>GİZLİ SOHBET HATTI</span>
         </a>
         <div class="menu-call">
