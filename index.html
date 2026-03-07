@@ -952,9 +952,58 @@
                 height: 220px;
             }
         }
+        /* ===== SİTE LOGOSU ===== */
+.site-logo {
+    max-width: 1400px;        /* Site wrapper ile aynı genişlik */
+    margin: 0 auto;           /* Ortalamak için */
+    padding: 15px 20px;       /* Üst/alt 15px, sağ/sol 20px boşluk */
+    text-align: left;         /* Yazıyı sola hizala */
+}
+
+.logo-link {
+    font-family: 'Montserrat', sans-serif; /* Sayfadaki font ile aynı */
+    font-size: 1.8rem;        /* Logo boyutu */
+    font-weight: 800;         /* Kalın font */
+    letter-spacing: 1px;       /* Harfler arası hafif boşluk */
+    color: #2d2d2d;           /* Koyu gri renk */
+    text-decoration: none;     /* Alt çizgiyi kaldır */
+    text-transform: uppercase; /* Tamamen büyük harf */
+    transition: color 0.3s ease; /* Renk geçişi için */
+    display: inline-block;     /* Margin padding için inline-block */
+    border-left: 5px solid #00a651; /* Sol tarafta renkli bir çizgi */
+    padding-left: 15px;        /* Çizgi ile yazı arası boşluk */
+    line-height: 1.2;          /* Satır yüksekliği */
+}
+
+.logo-link:hover {
+    color: #00a651;            /* Üzerine gelince yeşil renk */
+}
+
+/* Mobil uyumluluk (Tablet ve Telefon) */
+@media (max-width: 700px) {
+    .site-logo {
+        padding: 12px 15px;    /* Mobilde daha az boşluk */
+        text-align: center;     /* Mobilde ortalanabilir (isteğe bağlı) */
+    }
+    .logo-link {
+        font-size: 1.5rem;      /* Mobilde biraz küçült */
+        border-left-width: 4px; /* Çizgiyi biraz incelt */
+        padding-left: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo-link {
+        font-size: 1.2rem;      /* Çok küçük ekranlarda daha da küçült */
+    }
+}
+/* ===== LOGO BİTİŞ ===== */
     </style>
 </head>
 <body>
+     <div class="site-logo">
+        <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="logo-link">SESLİ SOHBET HATTI</a>
+    </div>
     <!-- Floating Call Button -->
     <a href="tel:003225889070" class="floating-call" id="floatingCall">
         <i class="fas fa-phone-alt"></i>
