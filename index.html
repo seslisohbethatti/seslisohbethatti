@@ -102,7 +102,7 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* Header - Görsel tıklanabilir ve tam ekran */
+        /* Header - Görsel tıklanabilir - Mobil siyahlık düzeltildi */
         .header {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -119,7 +119,7 @@
             position: relative;
             height: 500px;
             overflow: hidden;
-            background: #2d2d2d;
+            background: #e0e0e0;
             display: block;
             cursor: pointer;
         }
@@ -127,9 +127,9 @@
         .header-visual img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Varsayılan olarak cover, mobilde contain olacak */
-            opacity: 0.9;
-            transition: none; /* Yaklaşma efekti kaldırıldı */
+            object-fit: cover;
+            opacity: 1;
+            display: block;
             pointer-events: none;
         }
 
@@ -139,7 +139,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, rgba(45,45,45,0.7) 0%, rgba(45,45,45,0.2) 100%);
+            background: linear-gradient(90deg, rgba(45,45,45,0.4) 0%, rgba(45,45,45,0.1) 100%);
             pointer-events: none;
         }
 
@@ -384,7 +384,7 @@
             font-size: 0.95rem;
         }
 
-        /* EN UCUZ SESLİ SOHBET HATLARI - 81 İL - Modern Premium Butonlar */
+        /* EN UCUZ SESLİ SOHBET HATLARI - 81 İL */
         .cities-section {
             background: white;
             border-radius: 30px;
@@ -402,13 +402,13 @@
         }
 
         .city-link {
-            background: #ffffff;  /* Beyaz zemin */
+            background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 16px;
             padding: 14px 8px;
             text-align: center;
             text-decoration: none;
-            color: #2d2d2d;  /* Koyu gri yazı */
+            color: #2d2d2d;
             font-weight: 500;
             font-size: 0.95rem;
             transition: all 0.2s ease;
@@ -420,7 +420,7 @@
         
         .city-link .city-name {
             font-weight: 700;
-            color: #0066cc;  /* Mavi vurgu */
+            color: #0066cc;
             font-size: 1rem;
             margin-bottom: 2px;
         }
@@ -443,7 +443,7 @@
             color: #004999;
         }
 
-        /* Servis Açıklaması - Görsel tıklanabilir */
+        /* Servis Açıklaması */
         .service-description {
             background: white;
             border-radius: 30px;
@@ -617,13 +617,7 @@
             color: #00a651;
         }
 
-        .support-email {
-            color: #0066cc;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* SSS Bölümü - yeni sıra */
+        /* SSS Bölümü */
         .faq-section {
             background: white;
             border-radius: 30px;
@@ -670,6 +664,74 @@
             color: #5a5a5a;
             line-height: 1.7;
             padding-left: 30px;
+        }
+
+        /* SEO Makaleler Bölümü */
+        .seo-articles-section {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 40px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .article-card {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: #0066cc;
+            box-shadow: 0 15px 30px rgba(0,102,204,0.1);
+        }
+
+        .article-card h3 {
+            color: #0066cc;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #00a651;
+            padding-left: 12px;
+        }
+
+        .article-content {
+            color: #4a4a4a;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .article-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .article-content b, .article-content strong {
+            color: #0066cc;
+            font-weight: 700;
+        }
+
+        .article-footer {
+            margin-top: 15px;
+            text-align: right;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
         }
 
         /* Legal Footer */
@@ -751,6 +813,9 @@
             .privacy-grid {
                 grid-template-columns: 1fr;
             }
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 700px) {
@@ -758,17 +823,20 @@
                 padding: 10px;
             }
             
-            /* 1. Mobilde header görseli tam gözüksün */
+            /* Mobil header görsel düzeltmesi */
+            .header-visual {
+                height: 300px;
+                background: #f0f0f0;
+            }
             .header-visual img {
-                object-fit: contain; /* Mobilde görselin tamamı gözüksün */
-                background-color: #1a1a1a; /* Boşlukları doldurmak için */
+                object-fit: contain;
+                background-color: #f0f0f0;
             }
             
-            /* 2. Başlık ortalandı */
             .header-content {
                 padding: 30px 20px;
-                align-items: center; /* İçeriği yatayda ortala */
-                text-align: center; /* Metni ortala */
+                align-items: center;
+                text-align: center;
             }
             .header-content h1 {
                 font-size: 2rem;
@@ -794,7 +862,7 @@
                 font-size: 0.7rem;
             }
             
-            /* 3. Kızlar grid 2 kolon */
+            /* Kızlar grid 2 kolon */
             .girls-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -835,7 +903,6 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            /* 4. Şehir grid 2 kolon (mobilde 2 kolon daha iyi durur) */
             .cities-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
@@ -850,10 +917,16 @@
                 font-size: 0.65rem;
             }
             
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
             .section-title {
                 font-size: 1.8rem;
             }
-            .girls-section, .video-section, .service-description, .steps-section, .operators-section, .privacy-section, .faq-section, .cities-section {
+            .girls-section, .video-section, .service-description, .steps-section, 
+            .operators-section, .privacy-section, .faq-section, .cities-section, .seo-articles-section {
                 padding: 30px 15px;
                 margin-bottom: 30px;
             }
@@ -875,11 +948,8 @@
                 width: 70px;
                 height: 70px;
             }
-            .city-link .city-name {
-                font-size: 0.8rem;
-            }
-            .city-link .service-text {
-                font-size: 0.6rem;
+            .header-visual {
+                height: 220px;
             }
         }
     </style>
@@ -891,10 +961,10 @@
     </a>
 
     <div class="site-wrapper">
-        <!-- HEADER - Görsel tıklanabilir -->
+        <!-- HEADER - Görsel tıklanabilir - MOBİL SİYAH BANT SORUNU ÇÖZÜLDÜ -->
         <div class="header" data-aos="fade-up">
             <a href="tel:003225889070" class="header-visual">
-                <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp" alt="Sesli sohbet" onerror="this.src='https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp'">
+                <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp" alt="Sesli sohbet" onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f9e?q=80&w=1974&auto=format&fit=crop'">
                 <div class="header-visual-overlay"></div>
             </a>
             <div class="header-content">
@@ -913,7 +983,7 @@
             </div>
         </div>
 
-        <!-- Çevrimiçi Sohbet Kızları (kartlar da tıklanabilir zaten) -->
+        <!-- Çevrimiçi Sohbet Kızları - 21 KIZ TAM LİSTE -->
         <div class="girls-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-female"></i> Çevrimiçi Sohbet Kızları</h2>
             
@@ -1048,12 +1118,12 @@
             </div>
         </div>
 
-        <!-- VİDEO BÖLÜMÜ (video tıklanabilir değil ama otoplay var) -->
+        <!-- VİDEO BÖLÜMÜ -->
         <div class="video-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-play-circle"></i> Canlı Sohbet Anı</h2>
             <div class="video-container">
                 <video controls autoplay loop muted playsinline>
-                    <source src="https://seslisohbethatti.github.io/seslisohbethatti/video/sohbet-hatti.mp4" type="video/mp4">
+                    <source src="https://seslisohbethatti.github.io/seslisohbethatti/sohbet-hatti.mp4" type="video/mp4">
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
             </div>
@@ -1088,98 +1158,98 @@
             </div>
         </div>
 
-        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL - MODERN BUTONLAR -->
+        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL - ŞEHİR LİNKLERİ DÜZENLENDİ -->
         <div class="cities-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> En Ucuz Sesli Sohbet Hatları</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 30px;">Türkiye'nin 81 ilinde en ucuz sesli sohbet hattı hizmetinizde.</p>
             
             <div class="cities-grid">
-                <!-- 81 İL - Her biri "Şehir üstte, Sesli Sohbet Hattı altta" -->
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Adana</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Adıyaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Afyon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Ağrı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Amasya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Ankara</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Antalya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Artvin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Aydın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Balıkesir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bilecik</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bingöl</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bitlis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bolu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Burdur</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bursa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Çanakkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Çankırı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Çorum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Denizli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Diyarbakır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Edirne</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Elazığ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Erzincan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Erzurum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Eskişehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Gaziantep</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Giresun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Gümüşhane</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Hakkari</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Hatay</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Iğdır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Isparta</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">İstanbul</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">İzmir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kahramanmaraş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Karabük</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Karaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kars</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kastamonu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kayseri</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırıkkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırklareli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kilis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kocaeli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Konya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Kütahya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Malatya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Manisa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Mardin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Mersin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Muğla</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Muş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Nevşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Niğde</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Ordu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Osmaniye</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Rize</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Sakarya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Samsun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Siirt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Sinop</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Sivas</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Şanlıurfa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Şırnak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Tekirdağ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Tokat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Trabzon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Tunceli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Uşak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Van</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Yalova</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Yozgat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Zonguldak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Aksaray</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bayburt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Batman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Bartın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Ardahan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
-                <a href="tel:003225889070" class="city-link"><span class="city-name">Düzce</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <!-- 81 İL - Her bir link şehre özel sayfaya yönlendirir -->
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/adana-sesli-sohbet-hatti" class="city-link"><span class="city-name">Adana</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/adiyaman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Adıyaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/afyon-sesli-sohbet-hatti" class="city-link"><span class="city-name">Afyon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/agri-sesli-sohbet-hatti" class="city-link"><span class="city-name">Ağrı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/amasya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Amasya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/ankara-sesli-sohbet-hatti" class="city-link"><span class="city-name">Ankara</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/antalya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Antalya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/artvin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Artvin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/aydin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Aydın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/balikesir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Balıkesir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bilecik-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bilecik</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bingol-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bingöl</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bitlis-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bitlis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bolu-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bolu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/burdur-sesli-sohbet-hatti" class="city-link"><span class="city-name">Burdur</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bursa-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bursa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/canakkale-sesli-sohbet-hatti" class="city-link"><span class="city-name">Çanakkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/cankiri-sesli-sohbet-hatti" class="city-link"><span class="city-name">Çankırı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/corum-sesli-sohbet-hatti" class="city-link"><span class="city-name">Çorum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/denizli-sesli-sohbet-hatti" class="city-link"><span class="city-name">Denizli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/diyarbakir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Diyarbakır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/edirne-sesli-sohbet-hatti" class="city-link"><span class="city-name">Edirne</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/elazig-sesli-sohbet-hatti" class="city-link"><span class="city-name">Elazığ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/erzincan-sesli-sohbet-hatti" class="city-link"><span class="city-name">Erzincan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/erzurum-sesli-sohbet-hatti" class="city-link"><span class="city-name">Erzurum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/eskisehir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Eskişehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/gaziantep-sesli-sohbet-hatti" class="city-link"><span class="city-name">Gaziantep</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/giresun-sesli-sohbet-hatti" class="city-link"><span class="city-name">Giresun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/gumushane-sesli-sohbet-hatti" class="city-link"><span class="city-name">Gümüşhane</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/hakkari-sesli-sohbet-hatti" class="city-link"><span class="city-name">Hakkari</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/hatay-sesli-sohbet-hatti" class="city-link"><span class="city-name">Hatay</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/igdir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Iğdır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/isparta-sesli-sohbet-hatti" class="city-link"><span class="city-name">Isparta</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/istanbul-sesli-sohbet-hatti" class="city-link"><span class="city-name">İstanbul</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/izmir-sesli-sohbet-hatti" class="city-link"><span class="city-name">İzmir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kahramanmaras-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kahramanmaraş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/karabuk-sesli-sohbet-hatti" class="city-link"><span class="city-name">Karabük</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/karaman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Karaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kars-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kars</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kastamonu-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kastamonu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kayseri-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kayseri</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kirikkale-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kırıkkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kirklareli-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kırklareli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kirsehir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kırşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kilis-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kilis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kocaeli-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kocaeli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/konya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Konya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/kutahya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kütahya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/malatya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Malatya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/manisa-sesli-sohbet-hatti" class="city-link"><span class="city-name">Manisa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/mardin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Mardin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/mersin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Mersin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/mugla-sesli-sohbet-hatti" class="city-link"><span class="city-name">Muğla</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/mus-sesli-sohbet-hatti" class="city-link"><span class="city-name">Muş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/nevsehir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Nevşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/nigde-sesli-sohbet-hatti" class="city-link"><span class="city-name">Niğde</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/ordu-sesli-sohbet-hatti" class="city-link"><span class="city-name">Ordu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/osmaniye-sesli-sohbet-hatti" class="city-link"><span class="city-name">Osmaniye</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/rize-sesli-sohbet-hatti" class="city-link"><span class="city-name">Rize</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/sakarya-sesli-sohbet-hatti" class="city-link"><span class="city-name">Sakarya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/samsun-sesli-sohbet-hatti" class="city-link"><span class="city-name">Samsun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/siirt-sesli-sohbet-hatti" class="city-link"><span class="city-name">Siirt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/sinop-sesli-sohbet-hatti" class="city-link"><span class="city-name">Sinop</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/sivas-sesli-sohbet-hatti" class="city-link"><span class="city-name">Sivas</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/sanliurfa-sesli-sohbet-hatti" class="city-link"><span class="city-name">Şanlıurfa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/sirnak-sesli-sohbet-hatti" class="city-link"><span class="city-name">Şırnak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/tekirdag-sesli-sohbet-hatti" class="city-link"><span class="city-name">Tekirdağ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/tokat-sesli-sohbet-hatti" class="city-link"><span class="city-name">Tokat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/trabzon-sesli-sohbet-hatti" class="city-link"><span class="city-name">Trabzon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/tunceli-sesli-sohbet-hatti" class="city-link"><span class="city-name">Tunceli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/usak-sesli-sohbet-hatti" class="city-link"><span class="city-name">Uşak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/van-sesli-sohbet-hatti" class="city-link"><span class="city-name">Van</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/yalova-sesli-sohbet-hatti" class="city-link"><span class="city-name">Yalova</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/yozgat-sesli-sohbet-hatti" class="city-link"><span class="city-name">Yozgat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/zonguldak-sesli-sohbet-hatti" class="city-link"><span class="city-name">Zonguldak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/aksaray-sesli-sohbet-hatti" class="city-link"><span class="city-name">Aksaray</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bayburt-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bayburt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/batman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Batman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/bartin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bartın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/ardahan-sesli-sohbet-hatti" class="city-link"><span class="city-name">Ardahan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://www.seslisohbethatti.github.io/seslisohbethatti/duzce-sesli-sohbet-hatti" class="city-link"><span class="city-name">Düzce</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
             </div>
         </div>
 
-        <!-- TÜRKİYE SESLİ SOHBET HATTI (Servis Açıklaması) - Görsel tıklanabilir -->
+        <!-- TÜRKİYE SESLİ SOHBET HATTI -->
         <div class="service-description" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Türkiye Sesli Sohbet Hattı</h2>
             <div class="service-grid">
@@ -1277,91 +1347,86 @@
             </div>
         </div>
 
-        <!-- SSS Bölümü - Yeni sıra ile 9 Soru -->
+        <!-- SSS Bölümü -->
         <div class="faq-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-question-circle"></i> Sıkça Sorulan Sorular</h2>
             
             <div class="faq-grid">
-                <!-- 1. Sesli sohbet hattı nedir? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-microphone"></i> 1. Sesli sohbet hattı nedir?
-                    </div>
-                    <div class="faq-answer">
-                        Sesli sohbet hattı, telefon üzerinden gerçek kişilerle anonim olarak sohbet etmenizi sağlayan bir iletişim platformudur. 00322 588 90 70'i arayarak Türkiye'nin dört bir yanından insanlarla sıcak ve samimi sohbetler gerçekleştirebilirsiniz. Görüntülü değil, tamamen sesli iletişim kurulur.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-microphone"></i> 1. Sesli sohbet hattı nedir?</div>
+                    <div class="faq-answer">Sesli sohbet hattı, telefon üzerinden gerçek kişilerle anonim olarak sohbet etmenizi sağlayan bir iletişim platformudur. 00322 588 90 70'i arayarak Türkiye'nin dört bir yanından insanlarla sıcak ve samimi sohbetler gerçekleştirebilirsiniz.</div>
                 </div>
-                <!-- 2. Telefon sohbet hattı nasıl çalışır? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-headset"></i> 2. Telefon sohbet hattı nasıl çalışır?
-                    </div>
-                    <div class="faq-answer">
-                        Telefon sohbet hattı son derece basit çalışır: 00322 588 90 70'i tuşlayın, otomatik yönlendirme ile online kullanıcılarla eşleştirilirsiniz. Herhangi bir uygulama indirmenize gerek yok, doğrudan telefonunuzdan ararsınız. Dakika başı ücretlendirme ile sadece konuştuğunuz süre kadar ödersiniz.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-headset"></i> 2. Telefon sohbet hattı nasıl çalışır?</div>
+                    <div class="faq-answer">Telefon sohbet hattı son derece basit çalışır: 00322 588 90 70'i tuşlayın, otomatik yönlendirme ile online kullanıcılarla eşleştirilirsiniz. Dakika başı ücretlendirme ile sadece konuştuğunuz süre kadar ödersiniz.</div>
                 </div>
-                <!-- 3. Canlı sohbet hattı güvenli mi? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-shield"></i> 3. Canlı sohbet hattı güvenli mi?
-                    </div>
-                    <div class="faq-answer">
-                        Evet, tamamen güvenlidir. Görüşmeler kaydedilmez, kimlik bilgileriniz gizli kalır, anonim görüşme yaparsınız. 6698 sayılı KVKK kapsamında kişisel verileriniz korunur. Turkcell, Vodafone, Türk Telekom gibi tüm operatörlerle uyumlu çalışır ve gizlilik ön plandadır.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-shield"></i> 3. Canlı sohbet hattı güvenli mi?</div>
+                    <div class="faq-answer">Evet, tamamen güvenlidir. Görüşmeler kaydedilmez, kimlik bilgileriniz gizli kalır, anonim görüşme yaparsınız. 6698 sayılı KVKK kapsamında kişisel verileriniz korunur.</div>
                 </div>
-                <!-- 4. Görüşmeler nasıl ücretlendirilir? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-phone"></i> 4. Görüşmeler nasıl ücretlendirilir?
-                    </div>
-                    <div class="faq-answer">
-                        Tüm görüşmeler dakika başı ücretlendirilir. Tarifeniz operatörünüze göre değişiklik gösterir. Abonelik yok, sadece kullandığınız kadar ödersiniz. Görüşme süreniz maksimum 59 dakikadır.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-phone"></i> 4. Görüşmeler nasıl ücretlendirilir?</div>
+                    <div class="faq-answer">Tüm görüşmeler dakika başı ücretlendirilir. Abonelik yok, sadece kullandığınız kadar ödersiniz. Görüşme süreniz maksimum 59 dakikadır.</div>
                 </div>
-                <!-- 5. Görüşmeler kaydediliyor mu? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-lock"></i> 5. Görüşmeler kaydediliyor mu?
-                    </div>
-                    <div class="faq-answer">
-                        Hayır, kesinlikle kayıt tutulmaz. Gizlilik bizim için önceliklidir. Tüm görüşmeler tamamen gizli ve güvenlidir. Hiçbir içerik saklanmaz veya üçüncü taraflarla paylaşılmaz.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-lock"></i> 5. Görüşmeler kaydediliyor mu?</div>
+                    <div class="faq-answer">Hayır, kesinlikle kayıt tutulmaz. Gizlilik bizim için önceliklidir. Tüm görüşmeler tamamen gizli ve güvenlidir.</div>
                 </div>
-                <!-- 6. Hangi saatlerde arayabilirim? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-clock"></i> 6. Hangi saatlerde arayabilirim?
-                    </div>
-                    <div class="faq-answer">
-                        Hattımız 7 gün 24 saat açıktır. Dilediğiniz zaman arayabilir, sohbet kızlarıyla canlı sohbet edebilirsiniz. Gece gündüz fark etmez, her an aktif kullanıcılarımız var.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-clock"></i> 6. Hangi saatlerde arayabilirim?</div>
+                    <div class="faq-answer">Hattımız 7 gün 24 saat açıktır. Dilediğiniz zaman arayabilir, sohbet kızlarıyla canlı sohbet edebilirsiniz.</div>
                 </div>
-                <!-- 7. Kimlik bilgilerim gizli kalır mı? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-id-card"></i> 7. Kimlik bilgilerim gizli kalır mı?
-                    </div>
-                    <div class="faq-answer">
-                        Evet, kimlik bilgileriniz tamamen gizlidir. Sadece telefon numaranız görünür, soyad, adres gibi bilgiler istenmez. Anonim görüşme garantisi ile hizmet veriyoruz.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-id-card"></i> 7. Kimlik bilgilerim gizli kalır mı?</div>
+                    <div class="faq-answer">Evet, kimlik bilgileriniz tamamen gizlidir. Anonim görüşme garantisi ile hizmet veriyoruz.</div>
                 </div>
-                <!-- 8. Yaş sınırı var mı? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-ban"></i> 8. Yaş sınırı var mı?
-                    </div>
-                    <div class="faq-answer">
-                        Evet, hattımız 18 yaş ve üzeri yetişkinlere yöneliktir. 18 yaş altı kullanıcıların araması yasaktır. Bu kurala titizlikle uyulmaktadır.
-                    </div>
+                    <div class="faq-question"><i class="fas fa-ban"></i> 8. Yaş sınırı var mı?</div>
+                    <div class="faq-answer">Evet, hattımız 18 yaş ve üzeri yetişkinlere yöneliktir. 18 yaş altı kullanıcıların araması yasaktır.</div>
                 </div>
-                <!-- 9. Yurt dışından arayabilir miyim? -->
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <i class="fas fa-globe"></i> 9. Yurt dışından arayabilir miyim?
+                    <div class="faq-question"><i class="fas fa-globe"></i> 9. Yurt dışından arayabilir miyim?</div>
+                    <div class="faq-answer">Evet, 00322 588 90 70 numarası uluslararası aramalara açıktır. Dünyanın her yerinden bize ulaşabilirsiniz.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO MAKALELER BÖLÜMÜ - 3 ADET 800-1000 KARAKTER -->
+        <div class="seo-articles-section" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-newspaper"></i> Sohbet Hattı Rehberi</h2>
+            
+            <div class="articles-grid">
+                <!-- Makale 1: Ucuz Sohbet Hattı ve Sohbet Hattı Kızları -->
+                <div class="article-card">
+                    <h3>Ucuz Sohbet Hattı Avantajları</h3>
+                    <div class="article-content">
+                        <p><b>Ucuz sohbet hattı</b> arayanlar için 00322 588 90 70 en ideal seçimdir. Dakika başı düşük ücretlerle <b>sohbet hattı kızları</b> ile sıcak ve samimi görüşmeler yapabilirsiniz. <b>Sohbet hattı numarası</b> kolayca aranır ve hemen bağlantı sağlanır.</p>
+                        <p><b>Canlı sohbet numarası</b> üzerinden ulaşacağınız <b>canlı sohbet hattı</b> sayesinde dilediğiniz an online bayanlarla görüşme imkanı bulursunuz. <b>Sesli sohbet hattı</b> denildiğinde akla ilk gelen kaliteli hizmet, uygun fiyatlarıyla da dikkat çeker.</p>
+                        <p><b>Sıcak sohbet kızları</b> ile yapacağınız görüşmelerde kendinizi özel hissedersiniz. <b>Sohbet numarası</b> cebinizde, dilediğiniz zaman arayabilirsiniz. <b>Sohbet odası</b> atmosferinde geçen bu samimi diyaloglar, günün stresini atmanızı sağlar. <b>Sohbet bayanları</b> her zaman anlayışlı ve sıcakkanlıdır.</p>
                     </div>
-                    <div class="faq-answer">
-                        Evet, 00322 588 90 70 numarası uluslararası aramalara açıktır. Dünyanın her yerinden bize ulaşabilirsiniz. Operatörünüzün uluslararası arama iznini kontrol edin.
+                    <div class="article-footer">~ 850 karakter • 7 dk okuma</div>
+                </div>
+                
+                <!-- Makale 2: Canlı Sohbet Numarası ve Sıcak Sohbet Kızları -->
+                <div class="article-card">
+                    <h3>Canlı Sohbet Hattı Keyfi</h3>
+                    <div class="article-content">
+                        <p><b>Canlı sohbet numarası</b> 00322 588 90 70 ile 7/24 kesintisiz iletişim mümkün. <b>Canlı sohbet hattı</b> sayesinde istediğiniz an online olan <b>sohbet hattı kızları</b> ile görüşebilirsiniz. <b>Ucuz sohbet hattı</b> arayanlar için en uygun fiyatlar burada.</p>
+                        <p><b>Sıcak sohbet kızları</b> ile yapacağınız sohbetlerde içiniz ısınacak. <b>Sohbet odası</b> mantığıyla çalışan sistemimizde <b>sesli sohbet hattı</b> üzerinden kolayca bağlantı kurabilirsiniz. <b>Sohbet bayanları</b> sizi bekliyor, hemen arayın.</p>
+                        <p><b>Sohbet numarası</b> kolayca aranabilir formattadır: 00322 588 90 70. <b>Sohbet hattı kızları</b> arasında dilediğinizi seçme özgürlüğüne sahipsiniz. <b>Ucuz sohbet hattı</b> avantajıyla bütçenizi koruyun, <b>canlı sohbet numarası</b> ile kesintisiz iletişimin tadını çıkarın.</p>
                     </div>
+                    <div class="article-footer">~ 820 karakter • 7 dk okuma</div>
+                </div>
+                
+                <!-- Makale 3: Sesli Sohbet Hattı ve Sohbet Bayanları -->
+                <div class="article-card">
+                    <h3>Sesli Sohbet Hattı Rehberi</h3>
+                    <div class="article-content">
+                        <p><b>Sesli sohbet hattı</b> 00322 588 90 70 ile Türkiye'nin her yerinden insanlarla tanışın. <b>Sohbet bayanları</b> sıcak ve samimi yaklaşımlarıyla sizi rahatlatacak. <b>Ucuz sohbet hattı</b> fiyatları sayesinde uzun uzun sohbet edebilirsiniz.</p>
+                        <p><b>Sohbet odası</b> ortamında geçen görüşmelerde <b>sohbet hattı kızları</b> ile dertleşebilir, eğlenceli vakit geçirebilirsiniz. <b>Canlı sohbet numarası</b> sürekli aktiftir. <b>Sıcak sohbet kızları</b> ile yapacağınız görüşmeler unutulmaz anılara dönüşür.</p>
+                        <p><b>Sohbet numarası</b> cep telefonunuzda kayıtlı olsun, ihtiyaç duyduğunuz her an arayın. <b>Sohbet hattı kızları</b> ve <b>sohbet bayanları</b> sizin için online. <b>Ucuz sohbet hattı</b> avantajıyla dilediğiniz kadar konuşun, <b>sesli sohbet hattı</b> keyfini doyasıya yaşayın.</p>
+                    </div>
+                    <div class="article-footer">~ 790 karakter • 6 dk okuma</div>
                 </div>
             </div>
         </div>
@@ -1385,15 +1450,7 @@
 
     <!-- Hidden Semantic SEO -->
     <div class="hidden-semantic">
-        telefon sohbet hattı
-        canlı sohbet hattı
-        sohbet numarası
-        telefon sohbet
-        sesli sohbet platformu
-        sohbet kızları
-        sıcak sohbet
-        en ucuz sohbet hattı
-        anonim sohbet
+        telefon sohbet hattı canlı sohbet hattı sohbet numarası telefon sohbet sesli sohbet platformu sohbet kızları sıcak sohbet en ucuz sohbet hattı anonim sohbet
     </div>
 
     <!-- AOS Script -->
