@@ -102,19 +102,19 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* ===== SABİT KIRMIZI ÜST MENÜ ===== */
+        /* ===== SABİT KIRMIZI ÜST MENÜ - SADELEŞTİRİLMİŞ ===== */
         .sticky-red-menu {
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: #dc143c; /* Kırmızı - Crimson */
+            background-color: #dc143c;
             color: white;
-            padding: 12px 25px;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border-bottom: 2px solid #b01030;
@@ -122,7 +122,7 @@
         }
 
         .menu-logo {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
             letter-spacing: 1px;
             color: white;
@@ -130,16 +130,19 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             background: rgba(0, 0, 0, 0.2);
             padding: 5px 15px;
             border-radius: 40px;
             border: 1px solid rgba(255,255,255,0.3);
+            flex: 1;
+            text-align: center;
         }
 
         .menu-logo i {
-            font-size: 1.8rem;
-            color: #ffd700; /* Altın sarısı */
+            font-size: 1.5rem;
+            color: #ffd700;
         }
 
         .menu-logo span {
@@ -149,94 +152,67 @@
         .menu-call {
             display: flex;
             align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .menu-call-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .menu-call-text small {
-            font-size: 0.7rem;
-            opacity: 0.9;
         }
 
         .menu-call-number {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: white;
             text-decoration: none;
             letter-spacing: 1px;
             white-space: nowrap;
-        }
-
-        .menu-call-button {
-            background: white;
-            color: #dc143c;
-            border: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6px 15px;
             border-radius: 40px;
-            padding: 10px 30px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            border: 1px solid #ffd700;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 2px solid #ffd700;
+            gap: 5px;
         }
 
-        .menu-call-button i {
-            font-size: 1.3rem;
+        .menu-call-number i {
+            font-size: 1.2rem;
+            color: #ffd700;
         }
 
-        .menu-call-button:hover {
-            background: #ffd700;
-            color: #b01030;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        .menu-call-number:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: scale(1.02);
         }
 
         /* Mobil menü düzenlemeleri */
         @media (max-width: 700px) {
             .sticky-red-menu {
-                padding: 10px 15px;
+                padding: 8px 12px;
+                gap: 8px;
             }
             .menu-logo {
-                font-size: 1.2rem;
-                padding: 5px 10px;
+                font-size: 1rem;
+                padding: 4px 8px;
             }
             .menu-logo i {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             .menu-call-number {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+                padding: 4px 10px;
             }
-            .menu-call-button {
-                padding: 6px 18px;
+            .menu-call-number i {
                 font-size: 0.9rem;
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 400px) {
             .sticky-red-menu {
                 flex-direction: column;
                 align-items: stretch;
-                text-align: center;
+            }
+            .menu-logo {
+                width: 100%;
             }
             .menu-call {
                 justify-content: center;
-            }
-            .menu-call-text {
-                align-items: center;
-            }
-            .menu-call-button {
-                justify-content: center;
-                width: 100%;
             }
         }
         /* ===== MENÜ BİTİŞ ===== */
@@ -1078,19 +1054,15 @@
     </style>
 </head>
 <body>
-    <!-- KIRMIZI SABİT ÜST MENÜ - STICKY -->
+    <!-- KIRMIZI SABİT ÜST MENÜ - SADELEŞTİRİLMİŞ VE ORTALANMIŞ -->
     <div class="sticky-red-menu">
         <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="menu-logo">
             <i class="fas fa-phone-alt"></i>
-            <span>SESLİ SOHBET</span>
+            <span>GİZLİ SOHBET HATTI</span>
         </a>
         <div class="menu-call">
-            <div class="menu-call-text">
-                <small>7/24 CANLI HAT</small>
-                <span class="menu-call-number">00322 588 90 70</span>
-            </div>
-            <a href="tel:003225889070" class="menu-call-button">
-                <i class="fas fa-headset"></i> HEMEN ARA
+            <a href="tel:003225889070" class="menu-call-number">
+                <i class="fas fa-phone-alt"></i> 00322 588 90 70
             </a>
         </div>
     </div>
