@@ -127,14 +127,10 @@
         .header-visual img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Varsayılan olarak cover, mobilde contain olacak */
             opacity: 0.9;
-            transition: transform 8s;
+            transition: none; /* Yaklaşma efekti kaldırıldı */
             pointer-events: none;
-        }
-
-        .header-visual:hover img {
-            transform: scale(1.1);
         }
 
         .header-visual-overlay {
@@ -388,13 +384,14 @@
             font-size: 0.95rem;
         }
 
-        /* EN UCUZ SESLİ SOHBET HATLARI - 81 İL (koyu yeşil arkaplan, beyaz yazı, + Sohbet Hattı) */
+        /* EN UCUZ SESLİ SOHBET HATLARI - 81 İL - Modern Premium Butonlar */
         .cities-section {
             background: white;
             border-radius: 30px;
             padding: 50px;
             margin-bottom: 50px;
             border: 1px solid #e8e8e8;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
         }
 
         .cities-grid {
@@ -405,24 +402,45 @@
         }
 
         .city-link {
-            background: #006400;  /* koyu yeşil */
-            border: 1px solid #004d00;
-            border-radius: 50px;
-            padding: 12px 15px;
+            background: #ffffff;  /* Beyaz zemin */
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 14px 8px;
             text-align: center;
             text-decoration: none;
-            color: white;  /* beyaz yazı */
-            font-weight: 600;
+            color: #2d2d2d;  /* Koyu gri yazı */
+            font-weight: 500;
             font-size: 0.95rem;
-            transition: 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+        
+        .city-link .city-name {
+            font-weight: 700;
+            color: #0066cc;  /* Mavi vurgu */
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        
+        .city-link .service-text {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .city-link:hover {
-            background: #008000;
-            border-color: #006400;
-            transform: scale(1.02);
-            box-shadow: 0 6px 10px rgba(0,100,0,0.3);
+            transform: translateY(-3px);
+            border-color: #0066cc;
+            box-shadow: 0 10px 20px rgba(0,102,204,0.15);
+            background: #f9fcff;
+        }
+        
+        .city-link:hover .city-name {
+            color: #004999;
         }
 
         /* Servis Açıklaması - Görsel tıklanabilir */
@@ -739,8 +757,18 @@
             .site-wrapper {
                 padding: 10px;
             }
+            
+            /* 1. Mobilde header görseli tam gözüksün */
+            .header-visual img {
+                object-fit: contain; /* Mobilde görselin tamamı gözüksün */
+                background-color: #1a1a1a; /* Boşlukları doldurmak için */
+            }
+            
+            /* 2. Başlık ortalandı */
             .header-content {
                 padding: 30px 20px;
+                align-items: center; /* İçeriği yatayda ortala */
+                text-align: center; /* Metni ortala */
             }
             .header-content h1 {
                 font-size: 2rem;
@@ -766,13 +794,14 @@
                 font-size: 0.7rem;
             }
             
+            /* 3. Kızlar grid 2 kolon */
             .girls-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
             .girl-card img {
-                width: 80px;
-                height: 80px;
+                width: 90px;
+                height: 90px;
             }
             .girl-name {
                 font-size: 1rem;
@@ -806,9 +835,21 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
+            /* 4. Şehir grid 2 kolon (mobilde 2 kolon daha iyi durur) */
             .cities-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
+            .city-link {
+                padding: 12px 5px;
+            }
+            .city-link .city-name {
+                font-size: 0.9rem;
+            }
+            .city-link .service-text {
+                font-size: 0.65rem;
+            }
+            
             .section-title {
                 font-size: 1.8rem;
             }
@@ -824,10 +865,6 @@
             .legal-badge {
                 padding: 8px 25px;
             }
-            .city-link {
-                font-size: 0.85rem;
-                padding: 10px 8px;
-            }
         }
 
         @media (max-width: 380px) {
@@ -835,12 +872,14 @@
                 font-size: 1.2rem;
             }
             .girl-card img {
-                width: 65px;
-                height: 65px;
+                width: 70px;
+                height: 70px;
             }
-            .city-link {
-                font-size: 0.75rem;
-                padding: 8px 4px;
+            .city-link .city-name {
+                font-size: 0.8rem;
+            }
+            .city-link .service-text {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -1049,94 +1088,94 @@
             </div>
         </div>
 
-        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL (koyu yeşil + Sohbet Hattı) -->
+        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL - MODERN BUTONLAR -->
         <div class="cities-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> En Ucuz Sesli Sohbet Hatları</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 30px;">Türkiye'nin 81 ilinde en ucuz sesli sohbet hattı hizmetinizde.</p>
             
             <div class="cities-grid">
-                <!-- 81 İL - Her biri "Şehir Sohbet Hattı" şeklinde -->
-                <a href="tel:003225889070" class="city-link">Adana Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Adıyaman Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Afyon Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Ağrı Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Amasya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Ankara Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Antalya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Artvin Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Aydın Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Balıkesir Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bilecik Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bingöl Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bitlis Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bolu Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Burdur Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bursa Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Çanakkale Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Çankırı Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Çorum Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Denizli Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Diyarbakır Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Edirne Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Elazığ Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Erzincan Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Erzurum Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Eskişehir Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Gaziantep Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Giresun Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Gümüşhane Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Hakkari Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Hatay Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Iğdır Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Isparta Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">İstanbul Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">İzmir Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kahramanmaraş Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Karabük Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Karaman Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kars Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kastamonu Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kayseri Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kırıkkale Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kırklareli Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kırşehir Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kilis Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kocaeli Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Konya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Kütahya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Malatya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Manisa Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Mardin Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Mersin Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Muğla Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Muş Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Nevşehir Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Niğde Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Ordu Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Osmaniye Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Rize Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Sakarya Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Samsun Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Siirt Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Sinop Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Sivas Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Şanlıurfa Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Şırnak Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Tekirdağ Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Tokat Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Trabzon Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Tunceli Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Uşak Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Van Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Yalova Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Yozgat Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Zonguldak Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Aksaray Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bayburt Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Batman Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Bartın Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Ardahan Sohbet Hattı</a>
-                <a href="tel:003225889070" class="city-link">Düzce Sohbet Hattı</a>
+                <!-- 81 İL - Her biri "Şehir üstte, Sesli Sohbet Hattı altta" -->
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Adana</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Adıyaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Afyon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Ağrı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Amasya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Ankara</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Antalya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Artvin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Aydın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Balıkesir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bilecik</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bingöl</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bitlis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bolu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Burdur</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bursa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Çanakkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Çankırı</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Çorum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Denizli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Diyarbakır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Edirne</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Elazığ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Erzincan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Erzurum</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Eskişehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Gaziantep</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Giresun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Gümüşhane</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Hakkari</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Hatay</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Iğdır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Isparta</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">İstanbul</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">İzmir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kahramanmaraş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Karabük</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Karaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kars</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kastamonu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kayseri</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırıkkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırklareli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kırşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kilis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kocaeli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Konya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Kütahya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Malatya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Manisa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Mardin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Mersin</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Muğla</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Muş</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Nevşehir</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Niğde</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Ordu</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Osmaniye</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Rize</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Sakarya</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Samsun</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Siirt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Sinop</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Sivas</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Şanlıurfa</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Şırnak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Tekirdağ</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Tokat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Trabzon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Tunceli</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Uşak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Van</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Yalova</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Yozgat</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Zonguldak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Aksaray</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bayburt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Batman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Bartın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Ardahan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="tel:003225889070" class="city-link"><span class="city-name">Düzce</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
             </div>
         </div>
 
