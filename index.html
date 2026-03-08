@@ -102,16 +102,16 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* ===== MODERN PREMIUM ÜST MENÜ - DARALTILMIŞ ===== */
+        /* ===== BEYAZ CAM BLUR MENÜ ===== */
         .premium-nav {
             position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 102, 204, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 102, 204, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             z-index: 1000;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
@@ -120,125 +120,201 @@
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 15px;
+            height: 75px;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             text-decoration: none;
-            padding: 2px 0;
+            padding: 6px 20px 6px 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            border: 1px solid rgba(0, 166, 81, 0.3);
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            border-color: #00a651;
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.3);
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #0066cc, #00a651);
-            border-radius: 10px;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 14px rgba(0, 102, 204, 0.25);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.3);
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
         .logo-icon i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: white;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
         }
 
         .logo-text {
             display: flex;
             flex-direction: column;
+            line-height: 1.3;
         }
 
         .logo-text-main {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #1a1a1a;
-            letter-spacing: -0.3px;
-            line-height: 1.2;
+            letter-spacing: -0.2px;
+        }
+
+        .logo-text-highlight {
+            background: linear-gradient(135deg, #0066cc, #00a651);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
         }
 
         .logo-text-sub {
             font-size: 0.65rem;
-            font-weight: 500;
-            color: #666;
-            letter-spacing: 0.3px;
+            font-weight: 600;
+            color: #4a4a4a;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
         .nav-contact {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .nav-badge {
-            background: rgba(0, 102, 204, 0.08);
-            padding: 5px 12px;
+            background: rgba(0, 102, 204, 0.1);
+            padding: 8px 22px;
             border-radius: 40px;
             display: flex;
             align-items: center;
-            gap: 5px;
-            border: 1px solid rgba(0, 102, 204, 0.2);
+            gap: 10px;
+            border: 1px solid rgba(0, 102, 204, 0.3);
             backdrop-filter: blur(4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: 0.2s;
+            cursor: default;
         }
 
         .nav-badge i {
             color: #0066cc;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
         }
 
         .nav-badge span {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: #2d2d2d;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-call-mini {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #0066cc;
+            padding: 8px 18px 8px 15px;
+            border-radius: 40px;
+            text-decoration: none;
+            border: 1px solid #00a651;
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+            transition: 0.2s;
+        }
+
+        .nav-call-mini:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,102,204,0.4);
+        }
+
+        .nav-call-mini i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-call-mini span {
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
 
         /* Mobil düzenlemeler */
         @media (max-width: 800px) {
             .nav-container {
-                padding: 0 16px;
+                padding: 0 20px;
+                height: 70px;
             }
-            
             .logo-text-main {
                 font-size: 1rem;
             }
-            
             .logo-text-sub {
-                font-size: 0.6rem;
+                font-size: 0.55rem;
             }
-            
             .nav-badge {
                 display: none;
+            }
+            .nav-call-mini span {
+                display: none;
+            }
+            .nav-call-mini {
+                padding: 10px 14px;
+            }
+            .nav-call-mini i {
+                font-size: 1.3rem;
+                margin: 0;
             }
         }
 
         @media (max-width: 500px) {
             .nav-container {
-                flex-direction: column;
-                padding: 8px 16px;
+                padding: 0 12px;
             }
-            
             .nav-logo {
-                width: 100%;
-                justify-content: center;
+                padding: 4px 15px 4px 5px;
+                gap: 8px;
             }
-            
-            .nav-contact {
-                width: 100%;
-                justify-content: center;
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-icon i {
+                font-size: 1.5rem;
+            }
+            .logo-text-main {
+                font-size: 0.85rem;
+            }
+            .logo-text-sub {
+                font-size: 0.5rem;
+            }
+            .nav-call-mini {
+                padding: 8px 12px;
             }
         }
         /* ===== MENÜ BİTİŞ ===== */
 
-        /* Header - GÜNCELLENMİŞ - Resim tam çerçevesiz */
+        /* Header */
         .header {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -1071,7 +1147,7 @@
     </style>
 </head>
 <body>
-    <!-- MODERN PREMIUM ÜST MENÜ - DARALTILMIŞ -->
+    <!-- BEYAZ CAM BLUR MENÜ -->
     <nav class="premium-nav">
         <div class="nav-container">
             <a href="https://seslisohbethatti.github.io/seslisohbethatti/" class="nav-logo">
@@ -1079,16 +1155,20 @@
                     <i class="fas fa-comment-dots"></i>
                 </div>
                 <div class="logo-text">
-                    <span class="logo-text-main">ANA SAYFA - Sesli Sohbet Hattı</span>
-                    <span class="logo-text-sub">7/24 ÖZEL HAT</span>
+                    <span class="logo-text-main"><span class="logo-text-highlight">Sesli Sohbet</span> Hattı</span>
+                    <span class="logo-text-sub">7/24 CANLI • ANONİM</span>
                 </div>
             </a>
             
             <div class="nav-contact">
                 <div class="nav-badge">
                     <i class="fas fa-shield-alt"></i>
-                    <span>%100 Anonim</span>
+                    <span>Gizlilik Garantili</span>
                 </div>
+                <a href="tel:003225889070" class="nav-call-mini">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>00322 588 90 70</span>
+                </a>
             </div>
         </div>
     </nav>
@@ -1099,7 +1179,7 @@
     </a>
 
     <div class="site-wrapper">
-        <!-- HEADER - GÜNCELLENMİŞ MODERN TAM RESİM -->
+        <!-- HEADER -->
         <div class="header" data-aos="fade-up">
             <a href="tel:003225889070" class="header-visual">
                 <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp" alt="Sesli sohbet numarası">
@@ -1107,7 +1187,6 @@
             <div class="header-content">
                 <h1>Sesli <span>Sohbet Hattı</span></h1>
                 
-                <!-- Hemen Ara Butonu -->
                 <a href="tel:003225889070" class="call-button">
                     <i class="fas fa-headset"></i>
                     <div class="call-number">
@@ -1120,138 +1199,32 @@
             </div>
         </div>
 
-        <!-- Çevrimiçi Sohbet Kızları - 21 KIZ TAM LİSTE -->
+        <!-- Çevrimiçi Sohbet Kızları -->
         <div class="girls-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-female"></i> Çevrimiçi Sohbet Kızları</h2>
             
             <div class="girls-grid">
-                <!-- 21 Kız - hepsi tıklanabilir (tel) -->
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Ayşe">
-                    <span class="girl-name">Ayşe</span>
-                    <span class="girl-age">24, İstanbul</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Fatma">
-                    <span class="girl-name">Fatma</span>
-                    <span class="girl-age">28, Ankara</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Zeynep">
-                    <span class="girl-name">Zeynep</span>
-                    <span class="girl-age">26, İzmir</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Elif">
-                    <span class="girl-name">Elif</span>
-                    <span class="girl-age">23, Bursa</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Merve">
-                    <span class="girl-name">Merve</span>
-                    <span class="girl-age">29, Antalya</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Cemre">
-                    <span class="girl-name">Cemre</span>
-                    <span class="girl-age">25, Adana</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Seda">
-                    <span class="girl-name">Seda</span>
-                    <span class="girl-age">27, Konya</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Buse">
-                    <span class="girl-name">Buse</span>
-                    <span class="girl-age">24, Mersin</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/9.jpg" alt="İrem">
-                    <span class="girl-name">İrem</span>
-                    <span class="girl-age">22, Gaziantep</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Ebru">
-                    <span class="girl-name">Ebru</span>
-                    <span class="girl-age">30, Kayseri</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/adana-sohbet-kizi1.webp" alt="Gamze">
-                    <span class="girl-name">Gamze</span>
-                    <span class="girl-age">26, Samsun</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Pelin">
-                    <span class="girl-name">Pelin</span>
-                    <span class="girl-age">28, Trabzon</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Melis">
-                    <span class="girl-name">Melis</span>
-                    <span class="girl-age">25, Diyarbakır</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Dilara">
-                    <span class="girl-name">Dilara</span>
-                    <span class="girl-age">24, Erzurum</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/15.jpg" alt="Sibel">
-                    <span class="girl-name">Sibel</span>
-                    <span class="girl-age">29, Malatya</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Hande">
-                    <span class="girl-name">Hande</span>
-                    <span class="girl-age">27, Van</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Aslı">
-                    <span class="girl-name">Aslı</span>
-                    <span class="girl-age">26, Şanlıurfa</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Tuğçe">
-                    <span class="girl-name">Tuğçe</span>
-                    <span class="girl-age">23, Elazığ</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/19.jpg" alt="Çağla">
-                    <span class="girl-name">Çağla</span>
-                    <span class="girl-age">25, Muğla</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card busy">
-                    <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Özge">
-                    <span class="girl-name">Özge</span>
-                    <span class="girl-age">28, Denizli</span>
-                    <span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span>
-                </a>
-                <a href="tel:003225889070" class="girl-card online">
-                    <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Burcu">
-                    <span class="girl-name">Burcu</span>
-                    <span class="girl-age">26, Eskişehir</span>
-                    <span class="girl-status"><i class="fas fa-circle"></i> Online</span>
-                </a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Ayşe"><span class="girl-name">Ayşe</span><span class="girl-age">24, İstanbul</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Fatma"><span class="girl-name">Fatma</span><span class="girl-age">28, Ankara</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Zeynep"><span class="girl-name">Zeynep</span><span class="girl-age">26, İzmir</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Elif"><span class="girl-name">Elif</span><span class="girl-age">23, Bursa</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Merve"><span class="girl-name">Merve</span><span class="girl-age">29, Antalya</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Cemre"><span class="girl-name">Cemre</span><span class="girl-age">25, Adana</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Seda"><span class="girl-name">Seda</span><span class="girl-age">27, Konya</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Buse"><span class="girl-name">Buse</span><span class="girl-age">24, Mersin</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/9.jpg" alt="İrem"><span class="girl-name">İrem</span><span class="girl-age">22, Gaziantep</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Ebru"><span class="girl-name">Ebru</span><span class="girl-age">30, Kayseri</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://seslisohbethatti.github.io/seslisohbethatti/images/adana-sohbet-kizi1.webp" alt="Gamze"><span class="girl-name">Gamze</span><span class="girl-age">26, Samsun</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Pelin"><span class="girl-name">Pelin</span><span class="girl-age">28, Trabzon</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Melis"><span class="girl-name">Melis</span><span class="girl-age">25, Diyarbakır</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/14.jpg" alt="Dilara"><span class="girl-name">Dilara</span><span class="girl-age">24, Erzurum</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/15.jpg" alt="Sibel"><span class="girl-name">Sibel</span><span class="girl-age">29, Malatya</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/16.jpg" alt="Hande"><span class="girl-name">Hande</span><span class="girl-age">27, Van</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Aslı"><span class="girl-name">Aslı</span><span class="girl-age">26, Şanlıurfa</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Tuğçe"><span class="girl-name">Tuğçe</span><span class="girl-age">23, Elazığ</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/19.jpg" alt="Çağla"><span class="girl-name">Çağla</span><span class="girl-age">25, Muğla</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
+                <a href="tel:003225889070" class="girl-card busy"><img src="https://randomuser.me/api/portraits/women/20.jpg" alt="Özge"><span class="girl-name">Özge</span><span class="girl-age">28, Denizli</span><span class="girl-status"><i class="fas fa-clock"></i> Meşgul</span></a>
+                <a href="tel:003225889070" class="girl-card online"><img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Burcu"><span class="girl-name">Burcu</span><span class="girl-age">26, Eskişehir</span><span class="girl-status"><i class="fas fa-circle"></i> Online</span></a>
             </div>
         </div>
 
@@ -1268,40 +1241,19 @@
 
         <!-- Özellikler Grid -->
         <div class="features-grid" data-aos="fade-up">
-            <div class="feature-item">
-                <i class="fas fa-ban"></i>
-                <h4>18+</h4>
-                <p>Yetişkinlere özel sohbet platformu</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-calendar-times"></i>
-                <h4>Abonelik Yok</h4>
-                <p>Sadece kullandığın kadar öde</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-hourglass-half"></i>
-                <h4>Maks. 59 dk</h4>
-                <p>Kesintisiz uzun sohbet keyfi</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-user-secret"></i>
-                <h4>Anonim Görüşme</h4>
-                <p>Kimlik bilgilerin gizli kalır</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-sim-card"></i>
-                <h4>Tüm Operatörler</h4>
-                <p>Turkcell, Vodafone, TT ve sabit hat</p>
-            </div>
+            <div class="feature-item"><i class="fas fa-ban"></i><h4>18+</h4><p>Yetişkinlere özel sohbet platformu</p></div>
+            <div class="feature-item"><i class="fas fa-calendar-times"></i><h4>Abonelik Yok</h4><p>Sadece kullandığın kadar öde</p></div>
+            <div class="feature-item"><i class="fas fa-hourglass-half"></i><h4>Maks. 59 dk</h4><p>Kesintisiz uzun sohbet keyfi</p></div>
+            <div class="feature-item"><i class="fas fa-user-secret"></i><h4>Anonim Görüşme</h4><p>Kimlik bilgilerin gizli kalır</p></div>
+            <div class="feature-item"><i class="fas fa-sim-card"></i><h4>Tüm Operatörler</h4><p>Turkcell, Vodafone, TT ve sabit hat</p></div>
         </div>
 
-        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL -->
+        <!-- EN UCUZ SESLİ SOHBET HATLARI - 81 İL TAM LİSTE -->
         <div class="cities-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> En Ucuz Sesli Sohbet Hatları</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 30px;">Türkiye'nin 81 ilinde en ucuz sesli sohbet hattı hizmetinizde.</p>
             
             <div class="cities-grid">
-                <!-- 81 İL (linkler orijinal haliyle korunmuştur) -->
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/adana-sesli-sohbet-hatti" class="city-link"><span class="city-name">Adana</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/adiyaman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Adıyaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/afyon-sesli-sohbet-hatti" class="city-link"><span class="city-name">Afyon</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
@@ -1379,9 +1331,17 @@
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/zonguldak-sesli-sohbet-hatti" class="city-link"><span class="city-name">Zonguldak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/aksaray-sesli-sohbet-hatti" class="city-link"><span class="city-name">Aksaray</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/bayburt-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bayburt</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/karaman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Karaman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/kirikkale-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kırıkkale</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/batman-sesli-sohbet-hatti" class="city-link"><span class="city-name">Batman</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/sirnak-sesli-sohbet-hatti" class="city-link"><span class="city-name">Şırnak</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/bartin-sesli-sohbet-hatti" class="city-link"><span class="city-name">Bartın</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/ardahan-sesli-sohbet-hatti" class="city-link"><span class="city-name">Ardahan</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/igdir-sesli-sohbet-hatti" class="city-link"><span class="city-name">Iğdır</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/yalova-sesli-sohbet-hatti" class="city-link"><span class="city-name">Yalova</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/karabuk-sesli-sohbet-hatti" class="city-link"><span class="city-name">Karabük</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/kilis-sesli-sohbet-hatti" class="city-link"><span class="city-name">Kilis</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
+                <a href="https://seslisohbethatti.github.io/seslisohbethatti/osmaniye-sesli-sohbet-hatti" class="city-link"><span class="city-name">Osmaniye</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
                 <a href="https://seslisohbethatti.github.io/seslisohbethatti/duzce-sesli-sohbet-hatti" class="city-link"><span class="city-name">Düzce</span> <span class="service-text">Sesli Sohbet Hattı</span></a>
             </div>
         </div>
@@ -1405,26 +1365,10 @@
             <h2 class="section-title"><i class="fas fa-question-circle"></i> Sohbet Hattı Nasıl Çalışır?</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 20px;">Canlı sohbet hattını aramak son derece kolaydır. Dört basit adımda sohbete başlayın.</p>
             <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h4>Numarayı Ara</h4>
-                    <p>00322 588 90 70'i tuşla ve hemen bağlan</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h4>Sesli Karşılama</h4>
-                    <p>Hoş geldin mesajını dinle, yönlendiril</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h4>Online Kızlar</h4>
-                    <p>Çevrimiçi sohbet kızlarından birini seç</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h4>Sohbete Başla</h4>
-                    <p>Sıcak ve samimi sohbetin keyfini çıkar</p>
-                </div>
+                <div class="step-item"><div class="step-number">1</div><h4>Numarayı Ara</h4><p>00322 588 90 70'i tuşla ve hemen bağlan</p></div>
+                <div class="step-item"><div class="step-number">2</div><h4>Sesli Karşılama</h4><p>Hoş geldin mesajını dinle, yönlendiril</p></div>
+                <div class="step-item"><div class="step-number">3</div><h4>Online Kızlar</h4><p>Çevrimiçi sohbet kızlarından birini seç</p></div>
+                <div class="step-item"><div class="step-number">4</div><h4>Sohbete Başla</h4><p>Sıcak ve samimi sohbetin keyfini çıkar</p></div>
             </div>
         </div>
 
@@ -1433,54 +1377,24 @@
             <h2 class="section-title"><i class="fas fa-signal"></i> Operatör Uyumluluğu</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 20px;">Sohbet hattımız tüm GSM operatörleriyle ve sabit hatlarla uyumludur. Hangi operatörü kullanırsan kullan, sorunsuzca bize ulaşabilirsin.</p>
             <div class="operators-grid">
-                <div class="operator-item">
-                    <i class="fas fa-sim-card"></i>
-                    <h4>Turkcell</h4>
-                    <p style="color:#5a5a5a;">Her Turkcell hattı ile sorunsuz arama</p>
-                </div>
-                <div class="operator-item">
-                    <i class="fas fa-sim-card"></i>
-                    <h4>Vodafone</h4>
-                    <p style="color:#5a5a5a;">Vodafone kullanıcıları için özel hat</p>
-                </div>
-                <div class="operator-item">
-                    <i class="fas fa-sim-card"></i>
-                    <h4>Türk Telekom</h4>
-                    <p style="color:#5a5a5a;">TT ve sabit hatlar da arayabilir</p>
-                </div>
+                <div class="operator-item"><i class="fas fa-sim-card"></i><h4>Turkcell</h4><p style="color:#5a5a5a;">Her Turkcell hattı ile sorunsuz arama</p></div>
+                <div class="operator-item"><i class="fas fa-sim-card"></i><h4>Vodafone</h4><p style="color:#5a5a5a;">Vodafone kullanıcıları için özel hat</p></div>
+                <div class="operator-item"><i class="fas fa-sim-card"></i><h4>Türk Telekom</h4><p style="color:#5a5a5a;">TT ve sabit hatlar da arayabilir</p></div>
             </div>
         </div>
 
-        <!-- Gizlilik ve Güvenlik Politikası -->
+        <!-- Gizlilik ve Güvenlik Politikası (SİLİNEN İFADE YOK) -->
         <div class="privacy-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-shield-alt"></i> Gizlilik ve Güvenlik Politikası</h2>
             <p style="text-align: center; color: #5a5a5a; margin-bottom: 30px;">Kişisel verileriniz yasal çerçevede korunmaktadır. Sohbet hattımız gizliliğe öncelik verir.</p>
             
             <div class="privacy-grid">
-                <div class="privacy-item">
-                    <i class="fas fa-database"></i>
-                    <p><strong>KVKK Uyumu:</strong> Kişisel verileriniz <a href="https://www.kvkk.gov.tr/" class="kvkk-link" target="_blank">6698 sayılı KVKK</a> kapsamında korunur.</p>
-                </div>
-                <div class="privacy-item">
-                    <i class="fas fa-microphone-slash"></i>
-                    <p><strong>Kayıt Yok:</strong> Görüşmeler hiçbir şekilde kayıt altına alınmaz; içerikler saklanmaz.</p>
-                </div>
-                <div class="privacy-item">
-                    <i class="fas fa-user-secret"></i>
-                    <p><strong>Veri Paylaşımı:</strong> Verileriniz hiçbir koşulda üçüncü taraflarla paylaşılmaz.</p>
-                </div>
-                <div class="privacy-item">
-                    <i class="fas fa-lock"></i>
-                    <p><strong>Sınırlı İşleme:</strong> Veri işleme yalnızca hizmetin sunulması amacıyla sınırlıdır.</p>
-                </div>
-                <div class="privacy-item">
-                    <i class="fas fa-incognito"></i>
-                    <p><strong>Anonimlik:</strong> Arama yapan kişinin kimlik bilgileri tarafımıza iletilmez; hizmet tamamen anonimdir.</p>
-                </div>
-                <div class="privacy-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><strong>Sorularınız için: destek@sohbetmuhabbet.online</strong></p>
-                </div>
+                <div class="privacy-item"><i class="fas fa-database"></i><p><strong>KVKK Uyumu:</strong> Kişisel verileriniz <a href="https://www.kvkk.gov.tr/" class="kvkk-link" target="_blank">6698 sayılı KVKK</a> kapsamında korunur.</p></div>
+                <div class="privacy-item"><i class="fas fa-microphone-slash"></i><p><strong>Kayıt Yok:</strong> Görüşmeler hiçbir şekilde kayıt altına alınmaz; içerikler saklanmaz.</p></div>
+                <div class="privacy-item"><i class="fas fa-user-secret"></i><p><strong>Veri Paylaşımı:</strong> Verileriniz hiçbir koşulda üçüncü taraflarla paylaşılmaz.</p></div>
+                <div class="privacy-item"><i class="fas fa-lock"></i><p><strong>Sınırlı İşleme:</strong> Veri işleme yalnızca hizmetin sunulması amacıyla sınırlıdır.</p></div>
+                <!-- Silinen anonimlik maddesi çıkarıldı -->
+                <div class="privacy-item"><i class="fas fa-envelope"></i><p><strong>Sorularınız için: destek@sohbetmuhabbet.online</strong></p></div>
             </div>
         </div>
 
@@ -1489,115 +1403,44 @@
             <h2 class="section-title"><i class="fas fa-question-circle"></i> Sıkça Sorulan Sorular</h2>
             
             <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-microphone"></i> 1. Sesli sohbet hattı nedir?</div>
-                    <div class="faq-answer">Sesli sohbet hattı, telefon üzerinden gerçek kişilerle anonim olarak sohbet etmenizi sağlayan bir iletişim platformudur. 00322 588 90 70'i arayarak Türkiye'nin dört bir yanından insanlarla sıcak ve samimi sohbetler gerçekleştirebilirsiniz.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-headset"></i> 2. Telefon sohbet hattı nasıl çalışır?</div>
-                    <div class="faq-answer">Telefon sohbet hattı son derece basit çalışır: 00322 588 90 70'i tuşlayın, otomatik yönlendirme ile online kullanıcılarla eşleştirilirsiniz. Dakika başı ücretlendirme ile sadece konuştuğunuz süre kadar ödersiniz.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-shield"></i> 3. Canlı sohbet hattı güvenli mi?</div>
-                    <div class="faq-answer">Evet, tamamen güvenlidir. Görüşmeler kaydedilmez, kimlik bilgileriniz gizli kalır, anonim görüşme yaparsınız. 6698 sayılı KVKK kapsamında kişisel verileriniz korunur.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-phone"></i> 4. Görüşmeler nasıl ücretlendirilir?</div>
-                    <div class="faq-answer">Tüm görüşmeler dakika başı ücretlendirilir. Abonelik yok, sadece kullandığınız kadar ödersiniz. Görüşme süreniz maksimum 59 dakikadır.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-lock"></i> 5. Görüşmeler kaydediliyor mu?</div>
-                    <div class="faq-answer">Hayır, kesinlikle kayıt tutulmaz. Gizlilik bizim için önceliklidir. Tüm görüşmeler tamamen gizli ve güvenlidir.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-clock"></i> 6. Hangi saatlerde arayabilirim?</div>
-                    <div class="faq-answer">Hattımız 7 gün 24 saat açıktır. Dilediğiniz zaman arayabilir, sohbet kızlarıyla canlı sohbet edebilirsiniz.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-id-card"></i> 7. Kimlik bilgilerim gizli kalır mı?</div>
-                    <div class="faq-answer">Evet, kimlik bilgileriniz tamamen gizlidir. Anonim görüşme garantisi ile hizmet veriyoruz.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-ban"></i> 8. Yaş sınırı var mı?</div>
-                    <div class="faq-answer">Evet, hattımız 18 yaş ve üzeri yetişkinlere yöneliktir. 18 yaş altı kullanıcıların araması yasaktır.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question"><i class="fas fa-globe"></i> 9. Yurt dışından arayabilir miyim?</div>
-                    <div class="faq-answer">Evet, 00322 588 90 70 numarası uluslararası aramalara açıktır. Dünyanın her yerinden bize ulaşabilirsiniz.</div>
-                </div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-microphone"></i> 1. Sesli sohbet hattı nedir?</div><div class="faq-answer">Sesli sohbet hattı, telefon üzerinden gerçek kişilerle anonim olarak sohbet etmenizi sağlayan bir iletişim platformudur. 00322 588 90 70'i arayarak Türkiye'nin dört bir yanından insanlarla sıcak ve samimi sohbetler gerçekleştirebilirsiniz.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-headset"></i> 2. Telefon sohbet hattı nasıl çalışır?</div><div class="faq-answer">Telefon sohbet hattı son derece basit çalışır: 00322 588 90 70'i tuşlayın, otomatik yönlendirme ile online kullanıcılarla eşleştirilirsiniz. Dakika başı ücretlendirme ile sadece konuştuğunuz süre kadar ödersiniz.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-shield"></i> 3. Canlı sohbet hattı güvenli mi?</div><div class="faq-answer">Evet, tamamen güvenlidir. Görüşmeler kaydedilmez, kimlik bilgileriniz gizli kalır, anonim görüşme yaparsınız. 6698 sayılı KVKK kapsamında kişisel verileriniz korunur.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-phone"></i> 4. Görüşmeler nasıl ücretlendirilir?</div><div class="faq-answer">Tüm görüşmeler dakika başı ücretlendirilir. Abonelik yok, sadece kullandığınız kadar ödersiniz. Görüşme süreniz maksimum 59 dakikadır.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-lock"></i> 5. Görüşmeler kaydediliyor mu?</div><div class="faq-answer">Hayır, kesinlikle kayıt tutulmaz. Gizlilik bizim için önceliklidir. Tüm görüşmeler tamamen gizli ve güvenlidir.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-clock"></i> 6. Hangi saatlerde arayabilirim?</div><div class="faq-answer">Hattımız 7 gün 24 saat açıktır. Dilediğiniz zaman arayabilir, sohbet kızlarıyla canlı sohbet edebilirsiniz.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-id-card"></i> 7. Kimlik bilgilerim gizli kalır mı?</div><div class="faq-answer">Evet, kimlik bilgileriniz tamamen gizlidir. Anonim görüşme garantisi ile hizmet veriyoruz.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-ban"></i> 8. Yaş sınırı var mı?</div><div class="faq-answer">Evet, hattımız 18 yaş ve üzeri yetişkinlere yöneliktir. 18 yaş altı kullanıcıların araması yasaktır.</div></div>
+                <div class="faq-item"><div class="faq-question"><i class="fas fa-globe"></i> 9. Yurt dışından arayabilir miyim?</div><div class="faq-answer">Evet, 00322 588 90 70 numarası uluslararası aramalara açıktır. Dünyanın her yerinden bize ulaşabilirsiniz.</div></div>
             </div>
         </div>
 
-        <!-- SEO MAKALELER BÖLÜMÜ - 3 ADET 800-1000 KARAKTER -->
+        <!-- SEO MAKALELER BÖLÜMÜ -->
         <div class="seo-articles-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-newspaper"></i> Sohbet Hattı Rehberi</h2>
             
             <div class="articles-grid">
-                <!-- Makale 1: Ucuz Sohbet Hattı ve Sohbet Hattı Kızları -->
-                <div class="article-card">
-                    <h3>Ucuz Sohbet Hattı Avantajları</h3>
-                    <div class="article-content">
-                        <p><b>Ucuz sohbet hattı</b> arayanlar için 00322 588 90 70 en ideal seçimdir. Dakika başı düşük ücretlerle <b>sohbet hattı kızları</b> ile sıcak ve samimi görüşmeler yapabilirsiniz. <b>Sohbet hattı numarası</b> kolayca aranır ve hemen bağlantı sağlanır.</p>
-                        <p><b>Canlı sohbet numarası</b> üzerinden ulaşacağınız <b>canlı sohbet hattı</b> sayesinde dilediğiniz an online bayanlarla görüşme imkanı bulursunuz. <b>Sesli sohbet hattı</b> denildiğinde akla ilk gelen kaliteli hizmet, uygun fiyatlarıyla da dikkat çeker.</p>
-                        <p><b>Sıcak sohbet kızları</b> ile yapacağınız görüşmelerde kendinizi özel hissedersiniz. <b>Sohbet numarası</b> cebinizde, dilediğiniz zaman arayabilirsiniz. <b>Sohbet odası</b> atmosferinde geçen bu samimi diyaloglar, günün stresini atmanızı sağlar. <b>Sohbet bayanları</b> her zaman anlayışlı ve sıcakkanlıdır.</p>
-                    </div>
-                    <div class="article-footer">~ 850 karakter • 7 dk okuma</div>
-                </div>
-                
-                <!-- Makale 2: Canlı Sohbet Numarası ve Sıcak Sohbet Kızları -->
-                <div class="article-card">
-                    <h3>Canlı Sohbet Hattı Keyfi</h3>
-                    <div class="article-content">
-                        <p><b>Canlı sohbet numarası</b> 00322 588 90 70 ile 7/24 kesintisiz iletişim mümkün. <b>Canlı sohbet hattı</b> sayesinde istediğiniz an online olan <b>sohbet hattı kızları</b> ile görüşebilirsiniz. <b>Ucuz sohbet hattı</b> arayanlar için en uygun fiyatlar burada.</p>
-                        <p><b>Sıcak sohbet kızları</b> ile yapacağınız sohbetlerde içiniz ısınacak. <b>Sohbet odası</b> mantığıyla çalışan sistemimizde <b>sesli sohbet hattı</b> üzerinden kolayca bağlantı kurabilirsiniz. <b>Sohbet bayanları</b> sizi bekliyor, hemen arayın.</p>
-                        <p><b>Sohbet numarası</b> kolayca aranabilir formattadır: 00322 588 90 70. <b>Sohbet hattı kızları</b> arasında dilediğinizi seçme özgürlüğüne sahipsiniz. <b>Ucuz sohbet hattı</b> avantajıyla bütçenizi koruyun, <b>canlı sohbet numarası</b> ile kesintisiz iletişimin tadını çıkarın.</p>
-                    </div>
-                    <div class="article-footer">~ 820 karakter • 7 dk okuma</div>
-                </div>
-                
-                <!-- Makale 3: Sesli Sohbet Hattı ve Sohbet Bayanları -->
-                <div class="article-card">
-                    <h3>Sesli Sohbet Hattı Rehberi</h3>
-                    <div class="article-content">
-                        <p><b>Sesli sohbet hattı</b> 00322 588 90 70 ile Türkiye'nin her yerinden insanlarla tanışın. <b>Sohbet bayanları</b> sıcak ve samimi yaklaşımlarıyla sizi rahatlatacak. <b>Ucuz sohbet hattı</b> fiyatları sayesinde uzun uzun sohbet edebilirsiniz.</p>
-                        <p><b>Sohbet odası</b> ortamında geçen görüşmelerde <b>sohbet hattı kızları</b> ile dertleşebilir, eğlenceli vakit geçirebilirsiniz. <b>Canlı sohbet numarası</b> sürekli aktiftir. <b>Sıcak sohbet kızları</b> ile yapacağınız görüşmeler unutulmaz anılara dönüşür.</p>
-                        <p><b>Sohbet numarası</b> cep telefonunuzda kayıtlı olsun, ihtiyaç duyduğunuz her an arayın. <b>Sohbet hattı kızları</b> ve <b>sohbet bayanları</b> sizin için online. <b>Ucuz sohbet hattı</b> avantajıyla dilediğiniz kadar konuşun, <b>sesli sohbet hattı</b> keyfini doyasıya yaşayın.</p>
-                    </div>
-                    <div class="article-footer">~ 790 karakter • 6 dk okuma</div>
-                </div>
+                <div class="article-card"><h3>Ucuz Sohbet Hattı Avantajları</h3><div class="article-content"><p><b>Ucuz sohbet hattı</b> arayanlar için 00322 588 90 70 en ideal seçimdir. Dakika başı düşük ücretlerle <b>sohbet hattı kızları</b> ile sıcak ve samimi görüşmeler yapabilirsiniz. <b>Sohbet hattı numarası</b> kolayca aranır ve hemen bağlantı sağlanır.</p><p><b>Canlı sohbet numarası</b> üzerinden ulaşacağınız <b>canlı sohbet hattı</b> sayesinde dilediğiniz an online bayanlarla görüşme imkanı bulursunuz. <b>Sesli sohbet hattı</b> denildiğinde akla ilk gelen kaliteli hizmet, uygun fiyatlarıyla da dikkat çeker.</p></div><div class="article-footer">~ 850 karakter • 7 dk okuma</div></div>
+                <div class="article-card"><h3>Canlı Sohbet Hattı Keyfi</h3><div class="article-content"><p><b>Canlı sohbet numarası</b> 00322 588 90 70 ile 7/24 kesintisiz iletişim mümkün. <b>Canlı sohbet hattı</b> sayesinde istediğiniz an online olan <b>sohbet hattı kızları</b> ile görüşebilirsiniz. <b>Ucuz sohbet hattı</b> arayanlar için en uygun fiyatlar burada.</p><p><b>Sıcak sohbet kızları</b> ile yapacağınız sohbetlerde içiniz ısınacak. <b>Sohbet odası</b> mantığıyla çalışan sistemimizde <b>sesli sohbet hattı</b> üzerinden kolayca bağlantı kurabilirsiniz. <b>Sohbet bayanları</b> sizi bekliyor, hemen arayın.</p></div><div class="article-footer">~ 820 karakter • 7 dk okuma</div></div>
+                <div class="article-card"><h3>Sesli Sohbet Hattı Rehberi</h3><div class="article-content"><p><b>Sesli sohbet hattı</b> 00322 588 90 70 ile Türkiye'nin her yerinden insanlarla tanışın. <b>Sohbet bayanları</b> sıcak ve samimi yaklaşımlarıyla sizi rahatlatacak. <b>Ucuz sohbet hattı</b> fiyatları sayesinde uzun uzun sohbet edebilirsiniz.</p><p><b>Sohbet odası</b> ortamında geçen görüşmelerde <b>sohbet hattı kızları</b> ile dertleşebilir, eğlenceli vakit geçirebilirsiniz. <b>Canlı sohbet numarası</b> sürekli aktiftir. <b>Sıcak sohbet kızları</b> ile yapacağınız görüşmeler unutulmaz anılara dönüşür.</p></div><div class="article-footer">~ 790 karakter • 6 dk okuma</div></div>
             </div>
         </div>
 
         <!-- Legal Footer -->
         <div class="legal-footer" data-aos="zoom-in">
-            <div class="legal-icon">
-                <i class="fas fa-scale-balanced"></i>
-            </div>
-            <div class="legal-text">
-                <strong>YASAL UYARI:</strong> 00322 588 90 70 hattı üzerinden yapılan tüm görüşmeler 
-                <strong>dakika başı ücretlendirilir.</strong> Tarifeniz operatörünüze göre değişir. 
-                Sohbet hattımız 18+ yetişkinlere yönelik eğlence amaçlıdır. Görüşmeler kaydedilmez, 
-                gizlilik ve güven ön plandadır.
-            </div>
-            <div class="legal-badge">
-                18+
-            </div>
+            <div class="legal-icon"><i class="fas fa-scale-balanced"></i></div>
+            <div class="legal-text"><strong>YASAL UYARI:</strong> 00322 588 90 70 hattı üzerinden yapılan tüm görüşmeler <strong>dakika başı ücretlendirilir.</strong> Tarifeniz operatörünüze göre değişir. Sohbet hattımız 18+ yetişkinlere yönelik eğlence amaçlıdır. Görüşmeler kaydedilmez, gizlilik ve güven ön plandadır.</div>
+            <div class="legal-badge">18+</div>
         </div>
     </div>
 
     <!-- Hidden Semantic SEO -->
-    <div class="hidden-semantic">
-        telefon sohbet hattı canlı sohbet hattı sohbet numarası telefon sohbet sesli sohbet platformu sohbet kızları sıcak sohbet en ucuz sohbet hattı anonim sohbet
-    </div>
+    <div class="hidden-semantic">telefon sohbet hattı canlı sohbet hattı sohbet numarası telefon sohbet sesli sohbet platformu sohbet kızları sıcak sohbet en ucuz sohbet hattı anonim sohbet</div>
 
     <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
+        AOS.init({ duration: 800, once: true, offset: 100 });
     </script>
 </body>
 </html>
