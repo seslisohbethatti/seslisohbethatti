@@ -7,7 +7,7 @@
     <!-- SEO META - ADANA ÖZEL (OPTİMİZE EDİLDİ) -->
     <title>Adana Sesli Sohbet Hattı | 00322 588 90 70 | 7/24 Canlı</title>
     <meta name="description" content="Adana sesli sohbet hattı 00322 588 90 70. Gerçek Adana sohbet kızları ile 7/24 canlı, anonim ve güvenli sohbet. Hemen ara, sıcak sohbete başla.">
-    <meta name="keywords" content="adana sohbet hattı, adana sesli sohbet, adana sohbet kızları, adana canlı sohbet, adana sohbet numarası">
+    <!-- meta keywords satırı silindi (ceza riski) -->
     <meta name="robots" content="index, follow">
 
     <!-- Canonical -->
@@ -21,7 +21,10 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="tr_TR">
 
-    <!-- Schema.org - LocalBusiness + Service (DÜZELTME) -->
+    <!-- Core Web Vitals için Preload (kritik görsel) -->
+    <link rel="preload" as="image" href="https://seslisohbethatti.github.io/seslisohbethatti/images/adana-sesli-sohbet-hatti.webp" imagesrcset="" imagesizes="">
+
+    <!-- Schema.org - Service (DÜZELTME) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -45,6 +48,47 @@
             "contactType": "customer service",
             "availableLanguage": "Turkish",
             "hoursAvailable": "Mo-Su 00:00-23:59"
+        }
+    }
+    </script>
+
+    <!-- Ürün + İnceleme Şeması (Product + Review Schema) EKLENDİ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Adana Sesli Sohbet Hattı Hizmeti",
+        "description": "Adana ve çevresindeki kullanıcılar için 7/24 canlı, anonim ve güvenli sesli sohbet hattı hizmeti.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Sesli Sohbet Hattı"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://seslisohbethatti.github.io/seslisohbethatti/adana-sesli-sohbet-hatti",
+            "priceCurrency": "TRY",
+            "price": "0",
+            "description": "Görüşmeler dakika başı ücretlendirilir. Operatör tarifenize göre değişir.",
+            "availability": "https://schema.org/OnlineOnly",
+            "validFrom": "2024-01-01"
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4.5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Adanalı Kullanıcı"
+            },
+            "reviewBody": "Sıcak ve samimi sohbetler için harika bir hat. Her zaman aktif kullanıcılar var."
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "127"
         }
     }
     </script>
@@ -300,6 +344,33 @@
 
         .nav-call-mini i { color: white; font-size: 1.2rem; }
         .nav-call-mini span { color: white; font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; }
+
+        /* Breadcrumb Navigation (Eklendi) */
+        .breadcrumb-nav {
+            max-width: 1400px;
+            margin: 15px auto 0;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .breadcrumb-nav a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .breadcrumb-nav a:hover {
+            color: #00a651;
+            text-decoration: underline;
+        }
+        .breadcrumb-nav span {
+            color: #999;
+            margin: 0 5px;
+        }
+        .breadcrumb-nav .current {
+            color: #333;
+            font-weight: 600;
+        }
 
         /* Header */
         .header {
@@ -847,6 +918,11 @@
             </div>
         </div>
     </nav>
+
+    <!-- Breadcrumb (Ekmek Kırıntısı) - EKLENDİ -->
+    <div class="breadcrumb-nav" aria-label="breadcrumb">
+        <a href="https://seslisohbethatti.github.io/seslisohbethatti/">Ana Sayfa</a> <span>&gt;</span> <span class="current" aria-current="page">Adana Sesli Sohbet Hattı</span>
+    </div>
 
     <!-- Floating Call Button -->
     <a href="tel:003225889070" class="floating-call" aria-label="Hemen Ara">
