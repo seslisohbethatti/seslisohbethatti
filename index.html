@@ -14,7 +14,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Sesli Sohbet Hattı 00322 588 90 70 | 7/24 Canlı Sohbet">
     <meta property="og:description" content="Sesli sohbet hattı 00322 588 90 70 ile 7/24 canlı sohbet. Tüm Türkiye'den anonim sohbet için hemen ara.">
-    <meta property="og:image" content="https://res.cloudinary.com/demo/image/upload/v1/sesli-sohbet-hatti0.webp">
+    <meta property="og:image" content="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp">
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -42,7 +42,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* === DÜZELTİLMİŞ STILLER === */
+        /* === ORİJİNAL GÖRSELLER VE VİDEO KORUNDU === */
         * {
             margin: 0;
             padding: 0;
@@ -65,7 +65,7 @@
             z-index: 1;
         }
 
-        /* Floating Call Button - DÜZELTİLDİ */
+        /* Floating Call Button */
         .floating-call {
             position: fixed;
             bottom: 25px;
@@ -103,7 +103,7 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0); }
         }
 
-        /* BEYAZ CAM BLUR MENÜ - DÜZELTİLDİ */
+        /* BEYAZ CAM BLUR MENÜ */
         .premium-nav {
             position: sticky;
             top: 0;
@@ -315,7 +315,7 @@
         }
         /* ===== MENÜ BİTİŞ ===== */
 
-        /* Header - DÜZELTİLDİ */
+        /* Header - DÜZELTİLDİ (mavi gölge kaldırıldı, içerik ortalandı) */
         .header {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -333,7 +333,7 @@
             position: relative;
             width: 100%;
             height: 100%;
-            min-height: 400px;
+            min-height: 450px;
             overflow: hidden;
             background: #0066cc;
             display: block;
@@ -349,14 +349,9 @@
             display: block;
         }
 
+        /* MAVİ GÖLGE KALDIRILDI */
         .header-visual-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, rgba(0,102,204,0.3) 0%, rgba(0,166,81,0.2) 100%);
-            pointer-events: none;
+            display: none;
         }
 
         .header-content {
@@ -364,6 +359,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center; /* YATAY ORTALAMA */
+            text-align: center; /* METİN ORTALAMA */
             background: white;
         }
 
@@ -384,6 +381,9 @@
             color: #5a5a5a;
             margin-bottom: 30px;
             line-height: 1.7;
+            max-width: 500px; /* Okunabilirlik için */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .call-button {
@@ -399,6 +399,7 @@
             transition: 0.3s;
             width: fit-content;
             max-width: 100%;
+            margin: 0 auto; /* YATAY ORTALAMA */
         }
 
         .call-button:hover {
@@ -454,7 +455,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
         }
 
-        /* 6 kolonlu grid - DÜZELTİLDİ (responsive) */
+        /* 6 kolonlu grid */
         .girls-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -536,7 +537,7 @@
             color: #dc3545;
         }
 
-        /* Video bölümü - DÜZELTİLDİ */
+        /* Video bölümü */
         .video-section {
             background: white;
             border-radius: 30px;
@@ -561,7 +562,7 @@
             object-fit: cover;
         }
 
-        /* Özellikler grid - DÜZELTİLDİ */
+        /* Özellikler grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -601,7 +602,7 @@
             color: #666;
         }
 
-        /* Diğer bölümler (kısaltıldı ama düzeltildi) */
+        /* Diğer bölümler */
         .service-description, .steps-section, .operators-section, .privacy-section, .faq-section, .seo-articles-section {
             background: white;
             border-radius: 30px;
@@ -715,7 +716,7 @@
             margin-bottom: 15px;
         }
         
-        /* Footer - DÜZELTİLDİ */
+        /* Footer */
         .legal-footer {
             background: #2d2d2d;
             border-radius: 30px;
@@ -766,7 +767,7 @@
             border: 0;
         }
 
-        /* RESPONSIVE DÜZENLEMELER - GELİŞTİRİLDİ */
+        /* RESPONSIVE DÜZENLEMELER */
         @media (max-width: 1200px) {
             .girls-grid {
                 grid-template-columns: repeat(5, 1fr);
@@ -789,7 +790,7 @@
             }
             .header-content {
                 order: 2;
-                padding: 40px;
+                padding: 40px 30px;
             }
             .steps-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -852,6 +853,10 @@
             }
             .call-number span {
                 font-size: 1.3rem;
+            }
+            .call-button {
+                padding: 14px 20px;
+                gap: 15px;
             }
             .feature-item {
                 padding: 20px 15px;
@@ -935,11 +940,11 @@
     </a>
 
     <div class="site-wrapper">
-        <!-- HEADER - DÜZELTİLDİ -->
+        <!-- HEADER - MAVİ GÖLGE KALDIRILDI, İÇERİK ORTALANDI -->
         <div class="header" data-aos="fade-up">
             <a href="tel:003225889070" class="header-visual">
-                <img src="https://res.cloudinary.com/demo/image/upload/v1/sesli-sohbet-hatti0.webp" alt="Sesli sohbet numarası" loading="lazy">
-                <div class="header-visual-overlay"></div>
+                <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet-hatti0.webp" alt="Sesli sohbet numarası" loading="lazy">
+                <!-- MAVİ GÖLGE KALDIRILDI -->
             </a>
             <div class="header-content">
                 <h1>Sesli <span>Sohbet Hattı</span></h1>
@@ -952,7 +957,7 @@
                     </div>
                 </a>
                 
-                <p style="margin-top: 20px;">Sıcak sohbet, gerçek sohbet kızları, canlı sohbet. Türkiye'nin en samimi sesli sohbet platformu.</p>
+                <p>Sıcak sohbet, gerçek sohbet kızları, canlı sohbet. Türkiye'nin en samimi sesli sohbet platformu.</p>
             </div>
         </div>
 
@@ -965,12 +970,12 @@
             </div>
         </div>
 
-        <!-- VİDEO BÖLÜMÜ - DÜZELTİLDİ -->
+        <!-- VİDEO BÖLÜMÜ -->
         <div class="video-section" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-play-circle"></i> Canlı Sohbet Kızları</h2>
             <div class="video-container">
-                <video controls autoplay loop muted playsinline poster="https://res.cloudinary.com/demo/image/upload/v1/video-poster.jpg">
-                    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                <video controls autoplay loop muted playsinline>
+                    <source src="https://seslisohbethatti.github.io/seslisohbethatti/video/sohbet-hatti.mp4" type="video/mp4">
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
             </div>
@@ -985,7 +990,7 @@
             <div class="feature-item"><i class="fas fa-sim-card"></i><h4>Tüm Operatörler</h4><p>Turkcell, Vodafone, TT ve sabit hat</p></div>
         </div>
 
-        <!-- Diğer bölümler (kısaltılmış) -->
+        <!-- Diğer bölümler -->
         <div class="service-description" data-aos="fade-up">
             <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Türk Kızlar Sesli Sohbet Hattı</h2>
             <div class="service-grid">
@@ -993,7 +998,7 @@
                     <p><strong>Sesli sohbet hattı</strong> denince akla ilk gelen adres: 00322 588 90 70. Türkiye'nin en ucuz ve kaliteli sohbet hattında gerçek sohbet kızları ile sıcak sohbet için hemen ara.</p>
                 </div>
                 <div class="service-image">
-                    <img src="https://res.cloudinary.com/demo/image/upload/v1/sesli-sohbet2.webp" alt="Sesli sohbet" loading="lazy">
+                    <img src="https://seslisohbethatti.github.io/seslisohbethatti/images/sesli-sohbet2.webp" alt="Sesli sohbet" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1052,7 +1057,7 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question"><i class="fas fa-microphone"></i> Sesli sohbet hattı nedir?</div>
-                    <div class="faq-answer">Telefon üzerinden anonim sohbet platformudur.</div>
+                    <div class="faq-answer">Telefon üzerinden anonim ve ÜCRETLİ sohbet platformudur.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question"><i class="fas fa-clock"></i> 7/24 açık mı?</div>
@@ -1061,27 +1066,9 @@
             </div>
         </div>
         
-        <div class="seo-articles-section" data-aos="fade-up">
-            <h2 class="section-title"><i class="fas fa-newspaper"></i> Sohbet Hattı Rehberi</h2>
-            <div class="articles-grid">
-                <div class="article-card">
-                    <h3>Ucuz Sohbet Hattı</h3>
-                    <div class="article-content"><p>00322 588 90 70 en ucuz sohbet hattıdır.</p></div>
-                </div>
-                <div class="article-card">
-                    <h3>Canlı Sohbet</h3>
-                    <div class="article-content"><p>7/24 gerçek kişilerle sohbet.</p></div>
-                </div>
-                <div class="article-card">
-                    <h3>Anonim Görüşme</h3>
-                    <div class="article-content"><p>Kimliğiniz gizli kalır.</p></div>
-                </div>
-            </div>
-        </div>
-        
         <div class="legal-footer" data-aos="zoom-in">
             <div class="legal-icon"><i class="fas fa-scale-balanced"></i></div>
-            <div class="legal-text"><strong>YASAL UYARI:</strong> 00322 588 90 70 dakika başı ücretlidir. 18+</div>
+            <div class="legal-text"><strong>YASAL UYARI:</strong> 00322 588 90 70 dakika başı ücretlidir.</div>
             <div class="legal-badge">18+</div>
         </div>
     </div>
